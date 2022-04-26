@@ -15,7 +15,7 @@ object WallService {
                 // и т.д. по свойствам
                 return true
             } else {
-                println("Такой пост не найден")
+                prntln("Такой пост не найден")
             }
         }
         return false
