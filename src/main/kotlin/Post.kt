@@ -2,80 +2,78 @@ fun main() {
 
 }
 
-data class Post (
-    val id: Int,
-    val owner_id: Int,
-    val from_id: Int,
-    val created_by: Int,
-    val date: Int,
-    val text: String,
-    val reply_owner_id: Int,
-    val reply_post_id: Int,
-    val friends_only: Int,
-    val comments: Comments,
-    val copyright: Copyright,
-    val likes: Likes,
-    val reposts: Reposts,
-    val views: Views,
-    val post_type: String,
-    val signer_id: Int,
-    val can_pin: Int,
-    val can_delete: Int,
-    val can_edit: Int,
-    val is_pinned: Boolean,
-    val marked_as_ads: Boolean,
-    val is_favorite: Boolean,
-    val donut: Donut,
-    val postponed_id: Int
-    ) {
-
-}
+data class Post(
+    var id: Long,
+    var owner_id: Int = 0,
+    var from_id: Int = 0,
+    var created_by: Int = 0,
+    var date: Int = 0,
+    var text: String = "",
+    var reply_owner_id: Int = 0,
+    var reply_post_id: Int = 0,
+    var friends_only: Boolean = true,
+    var comments: Comments = Comments(),
+    var copyright: Copyright = Copyright(),
+    var likes: Likes = Likes(),
+    var reposts: Reposts = Reposts(),
+    var views: Views = Views(),
+    var post_type: String = "",
+    var signer_id: Int = 1,
+    var can_pin: Boolean = true,
+    var can_delete: Boolean = true,
+    var can_edit: Boolean = true,
+    var is_pinned: Boolean = true,
+    var marked_as_ads: Boolean = true,
+    var is_favorite: Boolean = true,
+    var donut: Donut = Donut(),
+    var postponed_id: Int = 0
+)
 
 data class Donut(
-    val is_donut: Boolean,
-    val paid_duration: Int,
-    val placeholder: Boolean,
-    val can_publish_free_copy: Boolean,
-    val edit_mode: String = arrayOf("all", "duration").toString()
+    var is_donut: Boolean = false,
+    var paid_duration: Int = 0,
+    var placeholder: Boolean = false,
+    var can_publish_free_copy: Boolean = false,
+    var edit_mode: String = arrayOf("all", "duration").toString()
 ) {
 
 }
 
 data class Views(
-    val count: Int
+    var count: Int = 1
 ) {
 
 }
 
 data class Reposts(
-    val count: Int,
-    val user_reposted: Boolean
+    var count: Int = 0,
+    var user_reposted: Boolean = true
 ) {
 
 }
 
 data class Likes(
-    val count: Int,
-    val user_likes: Boolean,
-    val can_like: Boolean,
-    val can_publish: Boolean,
+    var count: Int = 0,
+    var user_likes: Boolean = true,
+    var can_like: Boolean = true,
+    var can_publish: Boolean = true,
 ) {
 
 }
 
 data class Copyright(
-    val id: Int,
-    val link: String,
-    val name: String,
-    val type: String,
+    var id: Int = 1,
+    var link: String = "",
+    var name: String = "",
+    var type: String = "var"
 )
 
 data class Comments(
-    val count: Int,
-    val can_post: Boolean,
-    val groups_can_post: Boolean,
-    val can_close: Boolean,
-    val can_open: Boolean,
+    var count: Int = 1,
+    var can_post: Boolean = true,
+    var groups_can_post: Boolean = true,
+    var can_close: Boolean = false,
+    var can_open: Boolean = false,
 ) {
 
 }

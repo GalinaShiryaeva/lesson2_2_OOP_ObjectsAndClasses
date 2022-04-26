@@ -3,14 +3,27 @@ object WallService {
 
     fun add(post: Post): Post {
         posts += post
-        post.id++
-        return post
+        return posts.last()
     }
 
     fun update(post: Post): Boolean {
-        for (post. in posts) {
-
+        for (p in posts) {
+            if (post.id == p.id) {
+                println("Есть такой пост")
+                p.owner_id = 3
+                p.from_id = 5
+                // и т.д. по свойствам
+                return true
+            } else {
+                println("Такой пост не найден")
             }
+        }
+        return false
+    }
+
+    fun printPosts() {
+        for (post in posts) {
+            println(post)
         }
     }
 }
