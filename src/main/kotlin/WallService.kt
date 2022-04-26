@@ -9,13 +9,10 @@ object WallService {
     fun update(post: Post): Boolean {
         for (p in posts) {
             if (post.id == p.id) {
-                println("Есть такой пост")
                 p.owner_id = 3
                 p.from_id = 5
                 // и т.д. по свойствам
                 return true
-            } else {
-                prntln("Такой пост не найден")
             }
         }
         return false
