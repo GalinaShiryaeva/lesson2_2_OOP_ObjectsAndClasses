@@ -4,7 +4,7 @@ import org.junit.Test
 class WallServiceTest {
 
     @Test
-    fun TestAdd() {
+    fun testAdd() {
         // arrange
         var post = Post(1)
 
@@ -16,7 +16,7 @@ class WallServiceTest {
     }
 
     @Test
-    fun TestUpdate_ExistingId() {
+    fun testUpdate_ExistingId() {
         // arrange
         var post = Post(1)
         var isUpdated = false
@@ -30,7 +30,7 @@ class WallServiceTest {
     }
 
     @Test
-    fun TestUpdate_NotExistingId() {
+    fun testUpdate_NotExistingId() {
         // arrange
         var post = Post(1)
         var isUpdated = true

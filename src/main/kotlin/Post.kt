@@ -1,7 +1,3 @@
-fun main() {
-
-}
-
 data class Post(
     var id: Long,
     var owner_id: Int = 0,
@@ -65,7 +61,7 @@ data class Copyright(
     var id: Int = 1,
     var link: String = "",
     var name: String = "",
-    var type: String = "var"
+    var type: String = ""
 )
 
 data class Comments(
